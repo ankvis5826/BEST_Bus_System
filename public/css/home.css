@@ -1,0 +1,153 @@
+/* this is for the bus card  */
+
+#BusInfoCard {
+    width: 100%;
+    padding: 6rem 4.5rem;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 5rem;
+}
+
+.busCard {
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+
+/*this is for the cardTop**/
+
+.busCard .cardTop {
+    border-bottom: 2px solid #C9C9C9;
+    padding: 10px 15px;
+}
+
+.busCard .cardTop .cardTopTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+}
+
+.busCard .cardTop .cardTopData {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.busCard .cardTop .cardTopData h4 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #FFD802;
+    margin: 0px;
+}
+
+.busCard .cardTop .cardTopData span {
+    color: black;
+}
+
+
+/*this is for the Body**/
+
+.busCard .cardBody {
+    padding: 10px 15px;
+}
+
+.busCard .cardBody .busInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.busCard .cardBody .busInfo .stop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.busCard .cardBody .busInfo .stop img {
+    width: 3.3rem;
+    margin-right: 1.4rem;
+}
+
+.busCard .cardBody .busInfo .stop span {
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.busCard .cardBody .busInfo .busTime {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.busCard .cardBody .busInfo .busTime .data i {
+    font-size: 1.6rem;
+    margin-right: 5px;
+    font-weight: 500;
+}
+
+.busCard .cardBody .busInfo .busTime .data {
+    font-size: 1.4rem;
+}
+
+.busCard .cardBody .busInfo .busTime .data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.busCard .cardBody .time {
+    display: inline-block;
+    transform: rotate(270deg);
+    margin: 30px -14px;
+}
+
+.busCard .cardBody .time p {
+    margin: 0px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.busCard .cardBody .time p span {
+    color: #FFD802;
+}
+
+
+/* this is for border */
+
+.busCard .divider {
+    padding: 10px 0px;
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.busCard .divider i {
+    color: #a7a7a7;
+    margin: 0px 10px;
+    font-size: 1.9rem;
+}
+
+/* for responsive  */
+@media only screen and (max-width:768px) {
+    #BusInfoCard {
+        grid-template-columns: auto auto;
+        grid-gap: 5rem;
+    }
+
+}
+
+@media only screen and (max-width:600px) {
+    #BusInfoCard {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .busCard {
+        width: 100%;
+    }
+}

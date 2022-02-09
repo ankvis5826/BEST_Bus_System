@@ -1,0 +1,259 @@
+/* this is for basic only Or basic SetUp*/
+*{
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Be Vietnam Pro';
+}
+html{
+    font-size: 62.5%;
+}
+
+/*****this is for the common css for the form based page *****/
+
+/*for structure of form and image*/
+.box{
+    width: 100vw;
+    height: 100vh;
+    display: flex;    
+    
+}
+.form{
+    height: 100%;
+    width: 42%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.picture{
+    height: 100%;
+    width: 58%;    
+}
+
+/* for side main image */
+.picture img{
+    width: 100%;
+    height: 100%; 
+}
+
+/* for form and form components*/
+.form .formMain{
+    width: 80%;
+    height: auto;
+    margin-top: 10%;
+}
+.form .headText{
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-bottom: 4rem;
+}
+.form .inputs .input{
+    margin-top: 4.8rem
+}
+.form .inputs .input span{
+    display: block;
+    font-size: 1.76rem; 
+    font-family: 'Be Vietnam Pro';
+}
+.form .inputs .input input{
+    width: 100%;
+    background: none;
+    outline: none;
+    border: none;
+    background-color: #EDEDED;
+    padding: 11px;
+    font-size: 1.92rem;
+    margin-top: 7px;
+    border-radius: 10px;
+}
+
+/*this is for the submit button  */
+  .form .inputs .Sendbtn{
+    margin-top: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+ .submitBtn{
+   width: 95%;
+   border-radius: 10px;
+  background-color: #E9C02B;
+  font-weight: 700;
+  color: white;
+  padding: 6px;
+  font-size: 2.1rem;
+  text-align: center;
+  box-shadow: rgba(99, 99, 99, 0.562) 0px 2px 8px 0px;
+}
+
+
+/* ******************************************************************* */
+/******** this is for the option or addtional element of forms of login page********/
+/* for forgot password option*/
+.form .inputs .input .forgotpass{
+    width: 100%;
+    margin-top: 5px;
+    text-align: end;
+    font-size: 1.6rem;
+    color:#363535;
+}
+.form .inputs .input .forgotpass a{
+    color:#363535;
+}
+
+/* for line option*/
+.form .option{
+    width:100%;
+    margin-top:5rem;   
+    text-align: center;
+    font-size: 2.3rem;
+    font-family: 'Be Vietnam Pro';
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+  .form .option span{
+     margin: 0pc 1.5rem;
+ }
+  .form .option .line{
+     width: 40%;
+     height: 1.5px;
+     background-color: rgb(122, 121, 121);
+ }
+ 
+/* signupOption */
+.form .signupOption{
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    color:#272626;
+}
+
+
+
+/*********************************************************************/
+/******** this is for the option or addtional element for forms of sign-Up page********/
+/* for login option */
+#Signup .toLoginPage , #Feedback .back{
+    font-size: 1.8rem;
+    color: rgb(68, 68, 68);
+    position: absolute;
+    top: 2px;
+    left: 40%;
+    text-decoration: underline;
+    font-weight: 400;
+    transform: translateX(-100%);
+    
+}
+/* for add On */
+#Signup  .form .formMain .inputs .input{
+    margin-top: 2.7rem
+}
+
+#Signup  .form .formMain .submitBtn {
+    background-color: #F74040;
+}
+
+/*********************************************************************/
+/******** for the  feedback page ********/
+.form .message span {
+    display: block;
+    font-size: 1.76rem;
+    font-family: 'Be Vietnam Pro';
+    margin-top: 22px;
+}
+
+.form .message textarea {
+    width: 100%;
+    background: none;
+    outline: none;
+    border: none;
+    background-color: #EDEDED;
+    padding: 11px;
+    font-size: 1.92rem;
+    margin-top: 7px;
+    border-radius: 10px;
+}
+
+
+/*********************************************************************/
+/******** for the for responsive ********/
+@media only screen and (max-width: 1300px) {
+   
+    html{
+        font-size: 58.5%;
+    }
+    .form{
+        width: 45%;
+    }
+    .picture{
+        width: 55%;    
+    }
+    #Signup .toLoginPage , #Feedback .back{
+        left: 43%;
+    }
+}
+
+@media only screen and (max-width: 1150px) {
+   
+    html{
+        font-size: 55.5%;
+    }
+    .form{
+        width: 50%;
+    }
+    .picture{
+       
+        width: 50%;    
+    }
+    #Signup .toLoginPage , #Feedback .back{
+        left: 48%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+   
+    html{
+        font-size: 52.5%;
+    }
+    .form{
+        width: 50%;
+        
+    }
+    .picture{
+       
+        width: 50%;    
+    }
+    .form .formMain{
+        width: 90%;
+       
+    }
+    #Signup .toLoginPage , #Feedback .back{
+        left: 48%;
+    }
+}
+@media only screen and (max-width: 750px) {
+     
+    html{
+        font-size: 52.5%;
+    }
+    .form{
+        
+        width: 100%;
+    }
+    .picture{
+       
+        display: none; 
+    }
+    .form .formMain{
+        width: 80%;
+    }
+    #Signup .toLoginPage , #Feedback .back{
+      
+       left: 97%;
+    }
+}

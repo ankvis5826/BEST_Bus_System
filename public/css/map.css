@@ -1,0 +1,86 @@
+
+#Map .box{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+
+#Map .box .stopInfo{
+    width: 30%;
+    height: 100vh;
+   
+}
+
+#Map .box .stopInfo .stopNameBox{
+    margin-top: 20px;
+    width: 100%;
+    height: 78%;
+    overflow: auto;
+} 
+#Map .box .stopInfo .stop{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px 12px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+    margin-bottom: 15px;
+}
+#Map .box .stopInfo .stop img{
+    width: 4.5rem;
+    margin-right: 1rem;
+}
+
+#Map .box .mapBox{
+    width: 70%;
+    height: 100vh;
+    overflow:auto;
+}
+#Map .box .stopInfo .backBtn {
+    margin-top: 15px;
+}
+#Map .box .stopInfo .backBtn span{
+    background-color: #F90716;
+    font-size: 1.8rem;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    padding: 1rem 1.4rem;
+    border-radius: 0px 20px 20px 0px;
+  }
+  
+
+/* this is for the map */
+@media only screen and (max-width:1200px) {
+    
+    .busHeader .info h4{
+        font-size: 2rem;
+    }
+    .busHeader .info h5 {
+        font-size: 1.4rem;
+        font-weight: 400;
+        margin: 0px;
+    }
+}
+
+
+@media only screen and (max-width:796px) {
+    
+    #Map .box{
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        background: none;
+    
+    }
+    #Map .box .stopInfo{
+        width: 100%;
+    }
+    #Map .box .mapBox{
+        width: 100%;
+        height: 80vh;
+    }
+}
+
+
+
+
+

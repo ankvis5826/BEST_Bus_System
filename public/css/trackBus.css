@@ -1,0 +1,29 @@
+/* this is for the  Bus Track option */
+ .searchBarTwo .btn span{
+    font-size: 2.3rem;
+}
+#BusTrackOption .box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#BusTrackOption .box .busHeader{
+    width: 49.8%;
+}
+
+
+/* for responsive */
+
+@media only screen and (max-width:768px) {
+    #BusTrackOption .box{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+      }
+      #BusTrackOption .box .busHeader{
+          margin: 6px 0px;
+        width: 90%;
+    }
+}

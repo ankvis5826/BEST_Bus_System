@@ -1,0 +1,89 @@
+/*****this is for the navbar *****/
+
+@media only screen and (max-width:1250px) {
+  
+    html {
+        font-size: 58%;
+    }
+}
+
+@media only screen and (max-width:1000px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media only screen and (max-width:850px) {
+    html {
+        font-size: 53%;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    html{
+        background-color: cadetblue;
+    }
+    #NavBar .navbar .navbar-nav .nav-item:hover::after,
+    #NavBar .navbar .navbar-nav .active::after {
+        width: 5%;
+        margin: 0px 2px;
+    }
+}
+
+
+/*****this is for the common search bar one (two input and 1 btn)*****/
+
+
+/* and also for serach bar two(one input and 1 btn) */
+
+@media only screen and (max-width:1350px) {
+    html {
+        font-size: 60%;
+    }
+}
+
+@media only screen and (max-width:1200px) {
+    html {
+        font-size: 56%;
+    }
+}
+
+@media only screen and (max-width:1000px) {
+    html {
+        font-size: 52%;
+    }
+}
+
+@media only screen and (max-width:900px) {
+    html {
+        font-size: 47%;
+    }
+}
+
+@media only screen and (max-width:768px) {
+  
+    .SearchBarOne {
+        width: 55%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        top: 55%;
+    }
+    .SearchBarOne .box,
+    .SearchBarOne .btn {
+        width: 90%;
+        margin-top: 20px;
+    }
+
+  
+}
+
+@media only screen and (max-width:600px) {
+    .SearchBarOne {
+        width: 67%;
+    }
+}
+
+
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrackBus</title>
+
+    <!--Bootstrap Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+    <!--for the Google font (font-family: 'Be Vietnam Pro', sans-serif;)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!--this is for the font Awesome CDN (for icon)-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <!--for our local css file -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/trackBus.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+    <!--this is for the nav bar-->
+    {{>navBar}}
+
+    <!--this is for the here section-->
+    <section id="Hero">
+        <div class="herobox">
+            <!--this is for the search bar two-->
+            <div class="SearchBarOne searchBarTwo">
+                <div class="box">
+                    <p>From</p>
+                    <input type="text" name="#" id="#" placeholder="Nearest-Stop">
+                </div>
+                <div class="btn">
+                    <i class="fas fa-route"></i>
+                    <span>Get-Route</span>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    <!--this is for the  Bus Track option-->
+    <section id="BusTrackOption">
+        <div class="box">
+            <div class="busHeader">
+                <div class="icon">
+                    <img src="image/busIcon.png" alt="">
+                </div>
+                <div class="info">
+                    <h4>288<span>AC</span></h4>
+                    <h5>Kranti Nagar - Kandivali Station</h5>
+                </div>
+            </div>
+            <div class="busHeader">
+                <div class="icon">
+                    <img src="image/busIcon.png" alt="">
+                </div>
+                <div class="info">
+                    <h4>288<span>AC</span></h4>
+                    <h5>Kranti Nagar - Kandivali Station</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--this is for the test-->
+    <!--this is for the Bootstrap 4 CDN link-->
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

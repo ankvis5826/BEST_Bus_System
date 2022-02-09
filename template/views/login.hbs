@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <!--Bootstrap Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+    <!--for the Google font (font-family: 'Be Vietnam Pro', sans-serif;)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!--for our local css file -->
+    <link rel="stylesheet" href="css/form.css">
+</head>
+
+<body>
+    <section id="Login">
+        <div class="box">
+            <div class="form">
+                <!-- loginForm -> formMain-->
+                <div class="formMain">
+                    <h4 class="headText">Login</h4>
+                    <div class="inputs">
+                        <form action="/user/login" method="post">
+                            <div class="input">
+                                <span>Email/Username</span>
+                                <input type="text" placeholder="ali23@exampal.com" class="email"  name="email">
+                            </div>
+                            <div class="input">
+                                <span>Password</span>
+                                <input type="password" placeholder="......." class="password" name="pass">
+                                <div class="forgotpass">
+                                    <a href="">
+                                        <p> Forgot Password?</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="Sendbtn">
+                                <button type="submit" class="submitBtn">
+                                    Login
+                                </button>
+
+                            </div>
+                        </form>
+                    </div>
+                    <div class="option">
+                        <div class="line"></div>
+                        <span>OR</span>
+                        <div class="line"></div>
+
+                    </div>
+                    <div class="signupOption">
+                        <span>Need to create a Account? <a href="signup">Sign up</a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="picture">
+                <img src="image/login.png" alt="">
+            </div>
+        </div>
+    </section>
+    <!--this is for the Bootstrap 4 CDN link-->
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!--our js file-->
+    <script src="js/test.js"></script>
+</body>
+
+</html>
