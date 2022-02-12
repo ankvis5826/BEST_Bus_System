@@ -28,6 +28,7 @@ html {
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
 
 #NavBar .navbar .navbar-nav .nav-item {
@@ -39,6 +40,19 @@ html {
     font-size: 2rem;
     color: rgb(255, 255, 255);
     font-weight: 500;
+}
+
+#NavBar .navbar .logoutBtn{
+    text-align: center;
+    background-color: #FFD802;
+    padding: .5rem 2rem;
+    border-radius: 20px;
+    margin: 0px -20px;
+}
+
+#NavBar .navbar .logoutBtn:hover{
+transition: all .5s;
+background-color: rgb(68, 248, 68);
 }
 
 #NavBar .navbar .navbar-nav .nav-item:hover::after,

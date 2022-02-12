@@ -10,15 +10,12 @@ router.post('/signup', async (req, res) => {
     const user = new Users(req.body);
     try {
         await user.save();
-        res.status(201).send(user.sendDataChack())
+        res.status(201).send({status:"Success",info:user.sendDataChack()})
 
     } catch (e) {
-        res.status(400).send(`Error ${e}`);
+        res.status(400).send({status:"Unsuccess",info:e.message});
     }
 })
-// router.post('/test',  (req, res) => {
-
-// })
 
 router.post('/user/login', async (req, res) => {
    
@@ -26,17 +23,17 @@ router.post('/user/login', async (req, res) => {
         const user = await Users.findByLoginInfo(req.body.email, req.body.pass);
         const token = await user.AuthenToken();
         res.cookie('token',token);
-        res.cookie('user',user);
-        res.redirect('/homePage');
+        res.redirect('/');
        // res.status(200).send({user: user.sendDataChack(),token});
-    } catch (e) {
-        res.status(400).send('error: '+e);
+    } catch (error) {
+        res.redirect('/login')
     }
 })
 
 router.get('/me', authen, async (req, res) => {
      res.status(201).send(req.user.sendDataChack());
 })
+
 
 
 
@@ -67,38 +64,22 @@ router.patch('/user/update', authen, async (req, res) => {
     }
 })
 
-router.post('/user/logout', authen, async(req,res)=>{
+router.get('/signout', authen, async(req,res)=>{
     try{
 
         const user = req.user;
-        const token = req.header('Authorization').replace('Bearer ','');
+        const token = req.token;
         const updatetoken = user.tokens.filter((tokenArray)=>{
                return tokenArray.token != token;
         })
         user.tokens = updatetoken;
         user.save();
-        res.status(201).send('Done');
+        res.clearCookie('token');
+        res.redirect('/');
     }catch(e){
-        res.status(505).send({Error:"Authen first"})
+        res.redirect('/');
     }
-     
 });
 
 //this is for the page
-router.get('/Home', authen ,(req,res)=>{
-    res.status(201).send("home Page")
-})
-
-router.get('/GetBus', authen ,(req,res)=>{
-    res.status(201).send("home Page")
-})
-
-router.get('/Track', authen ,(req,res)=>{
-    res.status(201).send("home Page")
-})
-
-router.get('/Route', authen ,(req,res)=>{
-    res.status(201).send("home Page")
-})
-
 module.exports = router;

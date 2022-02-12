@@ -8,6 +8,7 @@ var cookieParser = require('cookie-parser')
 //importing route
 const basicRouter = require('./router/basicRoute')
 const htmlPageRouter = require('./router/htmlPageRouter')
+const appSupportRoute = require('./router/appSupportRoute')
 
 //this is for the port-> remote port or port local 
 const port = process.env.PORT || 3000;
@@ -38,6 +39,7 @@ app.use(express.static(toPublic));
 //adding router
 app.use(basicRouter);
 app.use(htmlPageRouter);
+app.use(appSupportRoute);
 
 app.listen(port,()=>{
     console.log("Server is on");

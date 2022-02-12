@@ -59,12 +59,12 @@ userSchema.statics.findByLoginInfo = async function (email,pass){
     
     const user = await Users.findOne({email});
     if(!user){
-         throw new Error('error: unable to login user')
+        
+        throw new Error({status:"fail",Message:"Wrong Email"})
     }  
     const isvalidPass =  await bcrypt.compare(pass,user.pass);   
-    
     if(!isvalidPass){
-         throw new Error('error: unable to login pass')
+         throw new Error({status:"fail",message:"Wrong Password"})
     }
     return user;
 } 
