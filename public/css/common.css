@@ -191,3 +191,6 @@ background-color: rgb(68, 248, 68);
     font-weight: 400;
     margin: 0px;
 }
+.busHeader .info h4 p{
+    display: inline;
+}

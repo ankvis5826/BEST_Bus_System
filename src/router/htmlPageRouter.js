@@ -28,13 +28,12 @@ router.get('/TrackBus',authen,(req,res)=>{
 })
 
 //for Map page
-router.get('/Map',authen,(req,res)=>{
-    res.render('Map');
+router.get('/busRoute',authen,(req,res)=>{
+    res.render('busRoute');
 })
 
-
-router.get('*',(req,res)=>{
-    res.status(400).send('404 Page')
+router.get('/map',authen,(req,res)=>{
+    res.render('Map');
 })
 
 module.exports = router;

@@ -41,6 +41,9 @@ app.use(basicRouter);
 app.use(htmlPageRouter);
 app.use(appSupportRoute);
 
+app.get('*',(req,res)=>{
+    res.status(400).send('404 Page')
+})
 app.listen(port,()=>{
     console.log("Server is on");
 })

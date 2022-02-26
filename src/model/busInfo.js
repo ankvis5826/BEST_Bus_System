@@ -7,7 +7,7 @@ const busInfoSChema = new mongoose.Schema({
         trim:true
     },
     isAC:{
-        type:Boolean,
+        type:String,
         required:true
     },
     maxPrice:{
@@ -19,8 +19,17 @@ const busInfoSChema = new mongoose.Schema({
         required:true
     }],
     stopGeoLoc:[{
-            type:String
-    }]
+            type:Object,
+    }],
+    startStop:{
+        type:String
+    },
+    endStop:{
+        type:String
+    },
+    busType:{
+        type:String
+    }
 })
 
 const busInfo = mongoose.model('busInfo',busInfoSChema)

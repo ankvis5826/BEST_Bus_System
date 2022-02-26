@@ -22,7 +22,7 @@ router.post('/user/login', async (req, res) => {
     try {
         const user = await Users.findByLoginInfo(req.body.email, req.body.pass);
         const token = await user.AuthenToken();
-        res.cookie('token',token);
+        res.cookie('token',token, {httpOnly: true} )
         res.redirect('/');
        // res.status(200).send({user: user.sendDataChack(),token});
     } catch (error) {
