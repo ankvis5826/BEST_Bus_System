@@ -9,6 +9,7 @@ var cookieParser = require('cookie-parser')
 const basicRouter = require('./router/basicRoute')
 const htmlPageRouter = require('./router/htmlPageRouter')
 const appSupportRoute = require('./router/appSupportRoute')
+const liveBus = require('./router/updateLiveLoc')
 
 //this is for the port-> remote port or port local 
 const port = process.env.PORT || 3000;
@@ -40,6 +41,7 @@ app.use(express.static(toPublic));
 app.use(basicRouter);
 app.use(htmlPageRouter);
 app.use(appSupportRoute);
+app.use(liveBus);
 
 app.get('*',(req,res)=>{
     res.status(400).send('404 Page')

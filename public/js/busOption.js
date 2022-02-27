@@ -58,5 +58,11 @@ const addListener = ()=>{
 
 
 const makeMapReq =  (busNo,startstop,endstop)=>{  
- location.href= `/support/addmapInfo?busNo=${busNo}&startstop=${startstop}&endstop=${endstop}`;
+  let isTrackPage = window.location.href;
+  if(isTrackPage.search('TrackBus')>=0){
+    isTrackPage = 'true';
+  }else{
+    isTrackPage = 'false';
+  }
+ location.href= `/support/addmapInfo?busNo=${busNo}&startstop=${startstop}&endstop=${endstop}&totrack=${isTrackPage}`;
 }

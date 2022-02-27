@@ -1,6 +1,7 @@
 const BusNo = getCookie('num');
 const startStop = getCookie('start');
 const endStop = getCookie('end');
+const isTrackPage = getCookie('isTrack');
 
 function getCookie(cookieName) {
     let cookie = {};
@@ -16,7 +17,11 @@ const getBusData = async () => {
     const getBusesRes = await res.json()
     return getBusesRes;
 }
-
+async function liveBusData() {
+    const res = await fetch(`/update/getLiveBus?busNo=${BusNo}&start=${startStop}`)
+    const getBusesRes = await res.json()
+    return getBusesRes;
+}
 function initMap() {
 
 
@@ -41,6 +46,30 @@ function initMap() {
 
         })
     }
+   
+    //-------for live bus update in UI
+    const updateLiveBus = () => {
+        liveBusData().then((data) => {
+            if (data.status !== "Success") {
+                alert(" server problem we are back in some time")
+            } else {
+                data.info.forEach((ele) => {
+                    getBusMarker(ele.liveLoc.lat, ele.liveLoc.lng, "./image/bus.png", `<h3>${ele.busNo}</h3><br>Vehicle No: ${ele.vehicleNo}`);
+                    console.log(ele.liveLoc.lat, " ", ele.liveLoc.lng, " ", ele.vehicleNo, ele.busNo);
+                })
+            }
+        })
+    }
+     
+     if (isTrackPage == 'true') {
+        updateLiveBus();
+        //  setInterval(()=>{
+        //     updateLiveBus();
+        //  },10000)
+        
+    } else {
+        console.log("no track bus");
+    }
 }
 
 
@@ -63,14 +92,31 @@ const getMarker = (lat, lng, icon, info) => {
     }
 }
 
-// function getLocation() {
-//         navigator.geolocation.getCurrentPosition(
-//                 (position) => {
-//                      console.log(position.coords.latitude + " " + position.coords.longitude)
-//                      getMarker(position.coords.latitude, position.coords.longitude,"./image/userLoc.png","me");
+const getBusMarker = (lat, lng, icon, info) => {
+    lat = Number(lat);
+    lng = Number(lng);
+    var markerBus = new google.maps.Marker({
+        position: { lat, lng },
+        map: map,
+        icon
+    });
+    if (info) {
+        var infoWindos = new google.maps.InfoWindow({
+            content: info
+        });
+        markerBus.addListener('click', () => {
+            infoWindos.open(map, markerBus)
+        })
+    }
+}
+function getLocation() {
+    navigator.geolocation.getCurrentPosition(
+        (position) => {
+            console.log(position.coords.latitude + " " + position.coords.longitude)
+            getMarker(position.coords.latitude, position.coords.longitude, "./image/userLoc.png", "me");
 
-//                 });
-// }
+        });
+}
 
 
 // ---------------------UI Update---------------------
@@ -101,6 +147,18 @@ const busStopUpdate = (stops) => {
     </div>`
     })
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //this is for the back btn
