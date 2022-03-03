@@ -34,7 +34,11 @@ const userSchema = new mongoose.Schema({
         token:{
             type:String
         }
-    }]
+    }],
+    isDriver:{
+        type:Boolean,
+        default:false
+    }
 })
 
 

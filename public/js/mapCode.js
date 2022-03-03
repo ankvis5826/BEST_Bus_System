@@ -2,7 +2,7 @@ const BusNo = getCookie('num');
 const startStop = getCookie('start');
 const endStop = getCookie('end');
 const isTrackPage = getCookie('isTrack');
-
+let lastBusLoc = [];
 function getCookie(cookieName) {
     let cookie = {};
     document.cookie.split(';').forEach(function (ele) {
@@ -23,8 +23,6 @@ async function liveBusData() {
     return getBusesRes;
 }
 function initMap() {
-
-
     let options = {
         center: { lat: 19.193357, lng: 72.874343 },
         zoom: 16,
@@ -46,27 +44,34 @@ function initMap() {
 
         })
     }
-   
+
     //-------for live bus update in UI
     const updateLiveBus = () => {
         liveBusData().then((data) => {
             if (data.status !== "Success") {
                 alert(" server problem we are back in some time")
             } else {
-                data.info.forEach((ele) => {
-                    getBusMarker(ele.liveLoc.lat, ele.liveLoc.lng, "./image/bus.png", `<h3>${ele.busNo}</h3><br>Vehicle No: ${ele.vehicleNo}`);
-                    console.log(ele.liveLoc.lat, " ", ele.liveLoc.lng, " ", ele.vehicleNo, ele.busNo);
-                })
+                if (data.info.length == 0) {
+                    lastBusLoc.forEach((ele) => {
+                        getBusMarker(ele.lat, ele.lng, "./image/bus.png", `Last bus location`);
+                    })
+                }else{
+                    lastBusLoc = [];
+                    data.info.forEach((ele) => {
+                        lastBusLoc.push({ lat: ele.liveLoc.lat, lng: ele.liveLoc.lng });
+                        getBusMarker(ele.liveLoc.lat, ele.liveLoc.lng, "./image/bus.png", `<h3>${ele.busNo}</h3><br>Vehicle No: ${ele.vehicleNo}`);
+                        console.log(ele.liveLoc.lat, " ", ele.liveLoc.lng, " ", ele.vehicleNo, ele.busNo);
+                    })
+                }
             }
         })
     }
-     
-     if (isTrackPage == 'true') {
+
+    if (isTrackPage == 'true') {
         updateLiveBus();
-        //  setInterval(()=>{
-        //     updateLiveBus();
-        //  },10000)
-        
+        setInterval(() => {
+            updateLiveBus();
+        }, 10000)
     } else {
         console.log("no track bus");
     }
@@ -108,13 +113,16 @@ const getBusMarker = (lat, lng, icon, info) => {
             infoWindos.open(map, markerBus)
         })
     }
+    setInterval(() => {
+        markerBus.setMap(null);
+    }, 10000)
+
 }
 function getLocation() {
     navigator.geolocation.getCurrentPosition(
         (position) => {
             console.log(position.coords.latitude + " " + position.coords.longitude)
             getMarker(position.coords.latitude, position.coords.longitude, "./image/userLoc.png", "me");
-
         });
 }
 

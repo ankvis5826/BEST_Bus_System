@@ -153,6 +153,9 @@ html{
 #Signup  .form .formMain .inputs .input{
     margin-top: 2.7rem
 }
+.ride .inputs .input{
+    margin-top: 2.8rem
+}
 
 #Signup  .form .formMain .submitBtn {
     background-color: #F74040;

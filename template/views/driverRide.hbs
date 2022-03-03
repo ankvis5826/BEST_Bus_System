@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver</title>
+
+    <!--Bootstrap Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+    <!--for the Google font (font-family: 'Be Vietnam Pro', sans-serif;)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!--for our local css file -->
+    <link rel="stylesheet" href="css/form.css">
+</head>
+
+<body>
+     <section id="Feedback">
+        <div class="box">
+            <a href="/signout" class="back">LogOut..</a>
+            <div class="form">
+                <div class="formMain ride">
+                    <h4 class="headText">Start Ride</h4>
+                    <div class="inputs">
+                        <div class="input">
+                            <span>Driver ID</span>
+                            <input type="text" placeholder="Stop Name" id="driverId">
+                        </div>
+                        <div class="input">
+                            <span>Bus Number</span>
+                            <input type="number" placeholder="12XX" id="busNo">
+                        </div>
+                        <div class="input">
+                            <span>Vehicle Number</span>
+                            <input type="text" placeholder="MH-47-AC-XXXX" id="vehicleNo">
+                        </div>
+                        <div class="input">
+                            <span>Start From</span>
+                            <input type="text" placeholder="Stop Name" id="startStop">
+                        </div>
+
+                        <div class="Sendbtn">
+                            <div class="submitBtn" >
+                                Start Ride
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="picture">
+                <img src="image/Driver1.png" alt="">
+            </div>
+        </div>
+     </section>
+    <!--this is for the Bootstrap 4 CDN link-->
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!--This is Our js file-->
+    <script src="js/startRide.js"></script>
+</body>
+
+</html>

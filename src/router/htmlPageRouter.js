@@ -3,37 +3,76 @@ const authen = require('../middleware/authenFunction');
 const router = express.Router();
 
 //for login page
-router.get('/',authen,(req,res)=>{
-    res.render('Home');
+router.get('/', authen, (req, res) => {
+    if (req.cookies.driver === "true") {
+        res.render('driverRide');
+    } else {
+        res.render('Home');
+    }
+
 })
 
 //for signUP page
-router.get('/signUP',(req,res)=>{
-    res.render('signUP');
+router.get('/signUP', (req, res) => {
+    if (req.cookies.driver === "true") {
+        res.render('driverRide');
+    } else {
+        res.render('signUP');
+    }
 })
 
 //for homePage page
-router.get('/login',(req,res)=>{
-    res.render('login',{status:"fail"});
+router.get('/login', (req, res) => {
+    if (req.cookies.driver === "true") {
+        res.render('driverRide');
+    } else {
+        res.render('login', { status: "fail" });
+    }
+
 })
 
 //for NearestStop page
-router.get('/NearestStop', authen,(req,res)=>{
-    res.render('NearestStop');
+router.get('/NearestStop', authen, (req, res) => {
+    if (req.cookies.driver === "true") {
+        res.render('driverRide');
+    } else {
+        res.render('NearestStop');
+    }
+
 })
 
 //for TrackBus page
-router.get('/TrackBus',authen,(req,res)=>{
-    res.render('TrackBus');
+router.get('/TrackBus', authen, (req, res) => {
+    if (req.cookies.driver === "true") {
+        res.render('driverRide');
+    } else {
+        res.render('TrackBus');
+    }
+
 })
 
 //for Map page
-router.get('/busRoute',authen,(req,res)=>{
-    res.render('busRoute');
+router.get('/busRoute', authen, (req, res) => {
+    if (req.cookies.driver === "true") {
+        res.render('driverRide');
+    } else {
+        res.render('busRoute');
+    }
+
 })
 
-router.get('/map',authen,(req,res)=>{
-    res.render('Map');
+router.get('/map', authen, (req, res) => {
+    if (req.cookies.driver === "true") {
+        res.render('driverRide');
+    } else {
+        res.render('Map');
+    }
+
 })
+
+// router.get('/ride',authen,(req,res)=>{
+//     res.render('driverRide');
+// })
+//for Driver Page
 
 module.exports = router;
