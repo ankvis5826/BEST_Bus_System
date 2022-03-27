@@ -14,21 +14,12 @@ router.get('/', authen, (req, res) => {
 
 //for signUP page
 router.get('/signUP', (req, res) => {
-    if (req.cookies.driver === "true") {
-        res.render('driverRide');
-    } else {
-        res.render('signUP');
-    }
+    res.render('signUp');
 })
 
 //for homePage page
 router.get('/login', (req, res) => {
-    if (req.cookies.driver === "true") {
-        res.render('driverRide');
-    } else {
         res.render('login', { status: "fail" });
-    }
-
 })
 
 //for NearestStop page

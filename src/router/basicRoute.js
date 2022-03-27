@@ -78,6 +78,12 @@ router.get('/signout', authen, async(req,res)=>{
         user.tokens = updatetoken;
         user.save();
         res.clearCookie('token');
+        res.clearCookie('driver');
+        res.clearCookie('end');
+        res.clearCookie('num');
+        res.clearCookie('isTrack');
+        res.clearCookie('start');
+
         res.redirect('/');
     }catch(e){
         res.redirect('/');

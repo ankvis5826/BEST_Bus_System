@@ -36,7 +36,7 @@ searchBtn.addEventListener('click', async (e) => {
     })
     //for more ten one buses
     if(busesWhichGoes.length==0){
-     
+        
         twoBus(fromSource,toSource);
     }
     updateUI();
