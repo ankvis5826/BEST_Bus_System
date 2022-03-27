@@ -10,6 +10,7 @@ const basicRouter = require('./router/basicRoute')
 const htmlPageRouter = require('./router/htmlPageRouter')
 const appSupportRoute = require('./router/appSupportRoute')
 const liveBus = require('./router/updateLiveLoc')
+const feedback = require('./router/addedSupportRoute')
 
 //this is for the port-> remote port or port local 
 const port = process.env.PORT || 3000;
@@ -42,10 +43,13 @@ app.use(basicRouter);
 app.use(htmlPageRouter);
 app.use(appSupportRoute);
 app.use(liveBus);
+app.use(feedback);
+
 
 app.get('*',(req,res)=>{
     res.status(400).send('404 Page')
 })
+
 app.listen(port,()=>{
     console.log("Server is on");
 })

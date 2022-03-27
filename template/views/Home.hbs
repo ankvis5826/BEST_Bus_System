@@ -24,9 +24,36 @@
 </head>
 
 <body>
-    <!--this is for the nav bar-->
-    {{>navBar}}
-
+      <!--this is for the nav bar-->
+<section id="NavBar">
+        <nav class="navbar navbar-expand-md ">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <i class="fas fa-align-justify"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="active nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/busRoute">Bus Route</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/TrackBus">TRACKING</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="/NearestStop">NEAREST-STOP</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                    <a class="logoutBtn" href="/signout">Signout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </section>
     <!--this is for the here section-->
     <section id="Hero">
         <div class="herobox">
@@ -267,7 +294,13 @@
             </div>
         </div> --}}
     </section>
-
+    <section id="feedback">
+        <div class="feedBox">
+            <a href="/feedback">
+                <span>Feedback</span>
+            </a>
+        </div>
+    </section>
     <!--this is for the test-->
     <!--this is for the Bootstrap 4 CDN link-->
     <!-- jQuery library -->

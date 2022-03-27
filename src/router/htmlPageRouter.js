@@ -42,7 +42,7 @@ router.get('/TrackBus', authen, (req, res) => {
 
 })
 
-//for Map page
+//for route page
 router.get('/busRoute', authen, (req, res) => {
     if (req.cookies.driver === "true") {
         res.render('driverRide');
@@ -52,6 +52,7 @@ router.get('/busRoute', authen, (req, res) => {
 
 })
 
+//for Map page
 router.get('/map', authen, (req, res) => {
     if (req.cookies.driver === "true") {
         res.render('driverRide');
@@ -61,9 +62,18 @@ router.get('/map', authen, (req, res) => {
 
 })
 
-// router.get('/ride',authen,(req,res)=>{
-//     res.render('driverRide');
-// })
-//for Driver Page
+//for feedback  page
+router.get('/feedback', authen, (req, res) => {
+    if (req.cookies.driver === "true") {
+        res.render('driverRide');
+    } else {
+        res.render('feedback');
+    }
+
+})
+
+
+
+
 
 module.exports = router;

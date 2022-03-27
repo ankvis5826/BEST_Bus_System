@@ -26,8 +26,36 @@
 </head>
 
 <body>
-     <!--this is for the nav bar-->
-    {{>navBar}}
+    <!--this is for the nav bar-->
+    <section id="NavBar">
+        <nav class="navbar navbar-expand-md ">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <i class="fas fa-align-justify"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class=" nav-item">
+                        <a class="nav-link" href="/busRoute">Bus Route</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/TrackBus">TRACKING</a>
+                    </li>
+
+                    <li class="active nav-item">
+                        <a class="nav-link" href="/NearestStop">NEAREST-STOP</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="logoutBtn" href="/signout">Signout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </section>
 
     <!--this is for the here section-->
     <section id="Hero">
@@ -43,7 +71,7 @@
             <div class="SearchBarOne searchBarTwo">
                 <div class="box">
                     <p>From</p>
-                    <input type="text" name="#" id="stopName" placeholder="Nearest-Stop" >
+                    <input type="text" name="#" id="stopName" placeholder="Nearest-Stop">
                 </div>
                 <div class="btn">
                     <i class="fas fa-search"></i>
@@ -58,15 +86,6 @@
     <section id="BusOption">
         <div class="box">
             {{!--
-             <div class="busHeader">
-                <div class="icon">
-                    <img src="image/busIcon.png" alt="">
-                </div>
-                <div class="info">
-                    <h4>288<span>AC</span></h4>
-                    <h5>Kranti Nagar - Kandivali Station</h5>
-                </div>
-            </div>
             <div class="busHeader">
                 <div class="icon">
                     <img src="image/busIcon.png" alt="">
@@ -112,7 +131,16 @@
                     <h5>Kranti Nagar - Kandivali Station</h5>
                 </div>
             </div>
-             --}}
+            <div class="busHeader">
+                <div class="icon">
+                    <img src="image/busIcon.png" alt="">
+                </div>
+                <div class="info">
+                    <h4>288<span>AC</span></h4>
+                    <h5>Kranti Nagar - Kandivali Station</h5>
+                </div>
+            </div>
+            --}}
 
         </div>
     </section>
@@ -122,8 +150,8 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-     {{!-- this our javascript file--}}
-     <script src="./js/nearestStop.js"></script>
+    {{!-- this our javascript file--}}
+    <script src="./js/nearestStop.js"></script>
 </body>
 
 </html>

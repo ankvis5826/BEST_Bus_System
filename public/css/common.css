@@ -194,3 +194,27 @@ background-color: rgb(68, 248, 68);
 .busHeader .info h4 p{
     display: inline;
 }
+
+
+/************ this is for the feedback  ************/
+#feedback{
+   position: fixed;
+   bottom: 50px;
+   right: 0px;
+   
+
+}
+
+#feedback .feedBox{
+    padding: 8px 20px;
+    background-color:  #F90716;
+    border-radius: 12px 0px 0px 12px;
+    box-shadow: rgba(0, 0, 0, 0.589) 0px 3px 8px;    
+}
+
+ #feedback .feedBox a{
+     color: white;
+     font-size: 20px;
+    font-weight: 500;
+
+ }
