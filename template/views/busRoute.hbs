@@ -29,7 +29,7 @@
     <!--this is for the nav bar-->
     <section id="NavBar">
         <nav class="navbar navbar-expand-md ">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="/'"><img src="image/mainLogo.png" alt="App Logo"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <i class="fas fa-align-justify"></i>
             </button>
@@ -50,7 +50,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="logoutBtn" href="/signout">Signout</a>
+                        <a class="logoutBtn pulse" href="/signout">Signout</a>
                     </li>
                 </ul>
             </div>
@@ -64,9 +64,9 @@
             <div class="SearchBarOne searchBarTwo">
                 <div class="box">
                     <p>From</p>
-                    <input type="text" name="#" id="busNo" placeholder="Nearest-Stop">
+                    <input type="text" name="#" id="busNo" placeholder="Bus Number">
                 </div>
-                <div class="btn">
+                <div class="btn pulse">
                     <i class="fas fa-route"></i>
                     <span>Get-Route</span>
                 </div>
@@ -97,6 +97,9 @@
             </div> --}}
         </div>
     </section>
+
+    <!--this is for the feedback-->
+    {{>feedback}}
 
     <!--this is for the test-->
     <!--this is for the Bootstrap 4 CDN link-->

@@ -201,8 +201,6 @@ background-color: rgb(68, 248, 68);
    position: fixed;
    bottom: 50px;
    right: 0px;
-   
-
 }
 
 #feedback .feedBox{
@@ -210,11 +208,36 @@ background-color: rgb(68, 248, 68);
     background-color:  #F90716;
     border-radius: 12px 0px 0px 12px;
     box-shadow: rgba(0, 0, 0, 0.589) 0px 3px 8px;    
+ 
+}
+#feedback .feedBox span{
+   color: white;
+   font-size: 2rem;
+   font-weight: 500;
+}
+#feedback .feedBox span:hover{
+    text-decoration: underline;
 }
 
- #feedback .feedBox a{
-     color: white;
-     font-size: 20px;
-    font-weight: 500;
 
- }
+
+ /********** this for btn click animation***********/
+   .pulse:active {
+        animation-name: pulse;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+        }
+    @keyframes pulse {
+    0% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+    50% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
+        transform: scale3d(1.05, 1.05, 1.05);
+    }
+    100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+    }
+    } 

@@ -260,3 +260,25 @@ html{
        left: 97%;
     }
 }
+
+ /********** this for btn click animation***********/
+ 
+    .pulse:active {
+        animation-name: pulse;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+        }
+        @keyframes pulse {
+        0% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+        }
+        50% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
+        transform: scale3d(1.05, 1.05, 1.05);
+        }
+        100% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+        }
+        } 

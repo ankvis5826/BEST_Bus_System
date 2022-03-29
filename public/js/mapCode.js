@@ -159,16 +159,6 @@ const busStopUpdate = (stops) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
 //this is for the back btn
 const backBtn = document.querySelector('.backBtn');
 
